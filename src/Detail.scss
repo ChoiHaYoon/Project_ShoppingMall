@@ -1,0 +1,97 @@
+@import './_reset.scss';
+
+/* Detail.js 스타일링 용 */
+/* SASS로 사용하고 싶으면 .css가 아닌 .scss로 지정해줘야한다 */
+// .titleName {
+//     color:red;
+// }
+// sass 문법
+// 1. 변수에 데이터를 저장해서 쓰는 방법 
+// >> white, black이런것이 아닌 
+//    밑에처럼 코드로 작성을 하게 되면 일일히 다써야하기 때문에 변수에 저장
+// $mainColor : #ff0000; // 변수지정은 $변수명
+// .titleName {
+//     color : $mainColor;
+// }
+
+
+// 2. import
+// 호환성이 좋게하기 위해 reset을 사용한다(기본속성) >> 모든페이지에서 사용한다
+// body {
+//     margin: 0;
+// }
+// div {
+//     box-sizing: border-box;
+// }
+// 기본속성들을 매번 가져올 수 없기 때문에 @import를 이용해서 다른 scss파일을 가져오는 방법
+// import용 파일들은 _reset.scss식으로 사용한다(언더바(_)) >> 쓸데없는 파일이라는 것을 알려줌
+
+//3. nesting
+// 기존의 방식(className이 container인 div의 h4들의 속성변경)은 너무 더럽다(길다)
+// 셀렉터를 대신해서 쓰는것이 nesting
+// div.container h4{
+//     color: blue;
+// }
+// 셀렉터의 스페이스바역할을 대신사용해 준다
+// className이 container인 div안에 있는 것들이구나 라는 것을 알게 됨
+// div.container {
+//     h4 {
+//         color: pink;
+//     }
+//     p {
+//         color: green;
+//     }
+// }
+
+
+// 3. extend >> 말그대로 상속(속성들을 가져와서 붙여넣기 해주는 방식)
+// .my-alert {
+//     background-color: #eeeeee;
+//     padding: 20px;
+//     border-radius: 5px;
+//     max-width: 500px;
+//     width: 100%;
+//     margin: auto;
+// }
+
+// .my-alert2 {
+//     @extend .my-alert;
+//     // .my-alert에 있는 모든 속성들을 붙여넣기 해주세요 >> 가져와주세요
+//     background: #ffe591; // 배경색만 바뀌게 된다
+// }
+
+.my-alert2 p {
+    margin-bottom : 0px;
+
+}
+
+// 4. mixin >> 함수만드는 문법 / include >> 만든 함수를 사용하는 법
+// 우리가 기본적으로 사용하는 함수처럼 @mixin 함수명() {} 으로 만들면 @include를 사용해서 원하는 선택자에 사용이 가능 
+@mixin alert() {
+    background-color: #eeeeee;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+.my-alert2 {
+    @include alert()
+}
+
+.tabBox {
+    height: 100px;
+    padding: 10px;
+}
+
+// enter >> 애니메이션 시작 때 적용할 css
+.wow-enter {
+    opacity: 0;
+}
+
+// active >> 애니메이션 동작할 때 css
+.wow-enter-active {
+    opacity: 1;
+    transition: all 500ms;
+} 

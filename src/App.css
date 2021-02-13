@@ -1,4 +1,51 @@
-.App {
+* {
+  text-align: center;
+  color: black;
+}
+
+a {
+color: black !important;
+}
+
+a:hover {
+text-decoration: none !important;
+}
+
+.navBar{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: bold;
+}
+
+.main{
+  background-image: url("images/background.jpg");
+  background-size: contain;
+  background-position: center;
+}
+
+.watched {
+  background-color: rgb(235, 235, 235);
+  border-radius: 4px;
+  width: 150px;
+  float: right;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+  position: sticky;
+  top: 0px;
+}
+
+.noWatched {
+  margin: 10px 0 10px 0;
+}
+
+.watchedImg{
+  width: 100px;
+  margin: 10px 0 10px 0;
+  border-radius: 4px;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +82,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
